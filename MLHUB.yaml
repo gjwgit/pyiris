@@ -1,9 +1,21 @@
+--- # PyIris
+meta:
+  name         : pyiris
+  title        : Classification models using iris dataset.
+  keywords     : python, biology, classification, decision tree, introductory, iris, cart, k nearest neighbours, linear discriminant analysis, support vector machine, naive bayes
+  version      : 0.0.1
+  languages    : py
+  license      : gpl3
+  author       : Graham.Williams@togaware.com
+  url          : https://github.com/gjwgit/pyiris
 dependencies:
-  python3: # Operating system installed packages.
+  python3:
     - pandas
     - matplotlib
     - sklearn
-    -
-
-  files
-	https://access.togaware.com/iris.csv
+  files:
+    - README.md
+    - demo.py
+    - https://access.togaware.com/iris.csv
+commands:
+  demo      : Demonstration of classification models using python.
