@@ -13,8 +13,6 @@ dependencies:
     - pandas
     - matplotlib
     - sklearn
-  pip3:
-    - sklearn>=0.22.0
   files:
     - demo.py
     - docs/README.md
