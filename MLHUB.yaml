@@ -1,7 +1,7 @@
 --- # PyIris
 meta:
   name         : pyiris
-  title        : Classification models using iris dataset.
+  title        : Classification models in Python using the iris dataset.
   keywords     : python, biology, classification, decision tree, introductory, iris, cart, k nearest neighbours, linear discriminant analysis, support vector machine, naive bayes
   version      : 0.0.1
   languages    : py
