@@ -16,6 +16,11 @@ dependencies:
   files:
     - README.md
     - demo.py
+    - docs/box_wiskers.png
+    - docs/dtr_confusion.png
+    - docs/histogram.png
+    - docs/knn_confusion.png
+    - docs/scatter.png
     - https://access.togaware.com/iris.csv
 commands:
   demo      : Demonstration of classification models using python.
