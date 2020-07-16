@@ -14,8 +14,8 @@ dependencies:
     - matplotlib
     - sklearn
   files:
-    - README.md
     - demo.py
+    - docs/README.md
     - docs/box_wiskers.png
     - docs/dtr_confusion.png
     - docs/histogram.png
