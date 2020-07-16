@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Time-stamp: <Friday 2020-07-17 09:00:15 AEST Graham Williams>
+# Time-stamp: <Friday 2020-07-17 09:16:20 AEST Graham Williams>
 #
 # Copyright (c) Togaware Pty Ltd. All rights reserved.
 # Licensed under the MIT License.
@@ -36,13 +36,15 @@ import pandas
 import re
 
 import matplotlib.pyplot as plt
+import sklearn
+
+from packaging import version
 
 from pandas.plotting  import scatter_matrix
 
 from sklearn import model_selection
 from sklearn.metrics import classification_report
 from sklearn.metrics import confusion_matrix
-from sklearn.metrics import plot_confusion_matrix
 from sklearn.metrics import accuracy_score
 from sklearn.linear_model import LogisticRegression
 from sklearn.tree import DecisionTreeClassifier
@@ -50,6 +52,9 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
 from sklearn.naive_bayes import GaussianNB
 from sklearn.svm import SVC
+
+if version.parse(sklearn.__version__) > version.parse("0.22.0"):
+    from sklearn.metrics import plot_confusion_matrix
 
 # Demonstrate loading a CSV file rather than sklearn.datasets.load_iris()
 #
@@ -254,12 +259,14 @@ accuracy of the model with respect to the different classes.
 print(cm)
 print()
 
-mlcat("", """\
+if version.parse(sklearn.__version__) > version.parse("0.22.0"):
+
+    mlcat("", """\
 Close the graphic window using Ctrl-W.
 """)
 
-plot_confusion_matrix(knn, Xte, Yte)
-plt.show()
+    plot_confusion_matrix(knn, Xte, Yte)
+    plt.show()
 
 mlask(end=True)
 
@@ -308,12 +315,14 @@ The confusion matrix and plot are similar.
 print(cm)
 print()
 
-mlcat("", """\
+if version.parse(sklearn.__version__) > version.parse("0.22.0"):
+
+    mlcat("", """\
 Close the graphic window using Ctrl-W.
 """)
 
-plot_confusion_matrix(mdt, Xte, Yte)
-plt.show()
+    plot_confusion_matrix(mdt, Xte, Yte)
+    plt.show()
 
 mlask(end=True)
 
