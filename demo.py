@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Time-stamp: <Friday 2020-07-17 08:56:49 AEST Graham Williams>
+# Time-stamp: <Friday 2020-07-17 09:00:15 AEST Graham Williams>
 #
 # Copyright (c) Togaware Pty Ltd. All rights reserved.
 # Licensed under the MIT License.
@@ -43,7 +43,6 @@ from sklearn import model_selection
 from sklearn.metrics import classification_report
 from sklearn.metrics import confusion_matrix
 from sklearn.metrics import plot_confusion_matrix
-from sklearn.metrics import ConfusionMatrixDisplay
 from sklearn.metrics import accuracy_score
 from sklearn.linear_model import LogisticRegression
 from sklearn.tree import DecisionTreeClassifier
