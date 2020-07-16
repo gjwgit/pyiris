@@ -3,7 +3,7 @@ meta:
   name         : pyiris
   title        : Classification models in Python using the iris dataset.
   keywords     : python, biology, classification, decision tree, introductory, iris, cart, k nearest neighbours, linear discriminant analysis, support vector machine, naive bayes
-  version      : 0.0.4
+  version      : 0.0.5
   languages    : py
   license      : gpl3
   author       : Graham.Williams@togaware.com
