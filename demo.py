@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Time-stamp: <Thursday 2020-07-16 16:27:35 AEST Graham Williams>
+# Time-stamp: <Friday 2020-07-17 08:56:49 AEST Graham Williams>
 #
 # Copyright (c) Togaware Pty Ltd. All rights reserved.
 # Licensed under the MIT License.
@@ -178,7 +178,7 @@ models.append(('CART', DecisionTreeClassifier()))
 models.append(('LDA',  LinearDiscriminantAnalysis()))
 models.append(('KNN',  KNeighborsClassifier()))
 models.append(('NB',   GaussianNB()))
-models.append(('SVM',  SVC()))
+models.append(('SVM',  SVC(gamma='scale')))
 
 names = ""
 
