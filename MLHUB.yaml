@@ -23,4 +23,4 @@ dependencies:
     - docs/scatter.png
     - https://access.togaware.com/iris.csv
 commands:
-  demo      : Demonstration of classification models using python.
+  demo : Demonstration of classification models using python.
