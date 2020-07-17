@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Time-stamp: <Friday 2020-07-17 09:16:20 AEST Graham Williams>
+# Time-stamp: <Friday 2020-07-17 10:06:02 AEST Graham Williams>
 #
 # Copyright (c) Togaware Pty Ltd. All rights reserved.
 # Licensed under the MIT License.
@@ -61,6 +61,7 @@ if version.parse(sklearn.__version__) > version.parse("0.22.0"):
 # Dataset from https://gist.githubusercontent.com/curran/a08a1080b88344b0c8a7/raw/639388c2cbc2120a14dcf466e85730eb8be498bb/iris.csv
 
 ds = pandas.read_csv('iris.csv')
+classes = re.sub(r", ([^,]*)$", ", and \\1", ", ".join(ds.species.unique()))
 
 mlask(end=True)
 
@@ -250,9 +251,11 @@ mlcat("", f"""\
 On the test dataset the KNN model's accuracy is
 {acc.round(2)} or {100*acc:.0f}%.
 
-The confusion matrix is listed below as a numeric array and displayed as a plot. 
-The rows correspond to the true classes and the columns correspond 
-to the predicted classes. This provides a quick visual evaluation of the
+The confusion matrix is listed below as a numeric array. 
+The rows correspond to the true classes (true label) and the 
+columns correspond to the predicted classes (predicted label). 
+The classes are {classes} in that order, top to bottom, left to right.
+This provides a quick visual evaluation of the
 accuracy of the model with respect to the different classes.
 """)
 
@@ -262,10 +265,12 @@ print()
 if version.parse(sklearn.__version__) > version.parse("0.22.0"):
 
     mlcat("", """\
+The plot provides a visual representation of the same data.
+
 Close the graphic window using Ctrl-W.
 """)
 
-    plot_confusion_matrix(knn, Xte, Yte)
+    plot_confusion_matrix(knn, Xte, Yte, cmap="Oranges")
     plt.show()
 
 mlask(end=True)
@@ -309,7 +314,7 @@ mlcat("", f"""\
 Similarly on the test dataset with the CART (decision tree) model the
 accuracy is {acc.round(2)} or {100*acc:.0f}%.
 
-The confusion matrix and plot are similar.
+The confusion matrix is similar.
 """)
 
 print(cm)
@@ -321,7 +326,7 @@ if version.parse(sklearn.__version__) > version.parse("0.22.0"):
 Close the graphic window using Ctrl-W.
 """)
 
-    plot_confusion_matrix(mdt, Xte, Yte)
+    plot_confusion_matrix(mdt, Xte, Yte, cmap="Oranges")
     plt.show()
 
 mlask(end=True)
