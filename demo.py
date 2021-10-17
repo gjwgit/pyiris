@@ -80,7 +80,7 @@ print(ds.tail())
 print()
 print(ds.sample(5))
 
-mlask(True, True)
+mlask(begin=True, end=True)
 
 mlcat("Statisics of the Dataset", """\
 A simple set of statistics gives some more insight into the data. Here
@@ -91,7 +91,7 @@ with the three percentiles 25%, 50%, and 75%.
 
 print(ds.describe().round(1))
 
-mlask(True, True)
+mlask(begin=True, end=True)
 
 mlcat("Identifying Missing Values", """\
 It is always good to check for missing values and to then determine how they
@@ -101,7 +101,7 @@ values.""")
 
 print(ds.isnull().sum().to_frame().rename(columns={0:''}))
 
-mlask(True, True)
+mlask(begin=True, end=True)
 
 mlcat("Box and Wiskers", """\
 A box and wiskers plot provides a quick visual insight into how the values of each
@@ -223,7 +223,7 @@ for name, model in models:
     names.append(name)
     print(f"{name:5}: {round(cv.mean(), 2)} {round(cv.std(), 2)}")
 
-mlask(True, True)
+mlask(begin=True, end=True)
 
 ########################################################################
 # KNN PERFORMANCE

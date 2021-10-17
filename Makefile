@@ -2,7 +2,7 @@
 #
 # Generic Makefile
 #
-# Time-stamp: <Tuesday 2020-07-07 13:34:29 AEST Graham Williams>
+# Time-stamp: <Monday 2021-10-18 08:32:02 AEDT Graham Williams>
 #
 # Copyright (c) Graham.Williams@togaware.com
 #
@@ -10,7 +10,7 @@
 #
 ########################################################################
 
-APP=myapp
+APP=pyiris
 VER=0.0.0
 
 INC_BASE    = $(HOME)/.local/share/make
@@ -71,3 +71,11 @@ help::
 togaware:
 	chmod a+r iris.csv
 	rsync -avzh iris.csv togaware.com:webapps/access/
+
+test:
+	@echo "-------------------------------------------------------"
+	ml install $(APP)
+	@echo "-------------------------------------------------------"
+	ml configure $(APP)
+	@echo "-------------------------------------------------------"
+	echo -e 'y\ny\n' | ml uninstall $(APP)
